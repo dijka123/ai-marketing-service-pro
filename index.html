@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 AI营销增长服务 - 专业优化版本</title>
+    <style>
+        :root {
+            --primary: #1a56db;
+            --success: #057a55;
+            --warning: #b45309;
+            --dark: #111827;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #f8fafc;
+            color: #374151;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 专业头部 */
+        .professional-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 60px;
+        }
+        
+        .professional-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .professional-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .value-proposition {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 25px 40px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* 核心理念 */
+        .core-principles {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .principle-card {
+            background: var(--light);
+            padding: 35px 30px;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .principle-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* 服务套餐 */
+        .services {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .service-card.popular {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(26, 86, 219, 0.15);
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .service-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 20px 0;
+        }
+        
+        .service-price span {
+            font-size: 1.2rem;
+            color: #6b7280;
+            font-weight: normal;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .service-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* 保证体系 */
+        .guarantee-system {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+        }
+        
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .guarantee-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* 案例展示 */
+        .case-studies {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .case-card {
+            background: var(--light);
+            padding: 35px 30px;
+            border-radius: 20px;
+        }
+        
+        .case-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid var(--border);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--success);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: white;
+            border-radius: 30px;
+            padding: 80px 40px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .btn {
+            padding: 20px 50px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(26, 86, 219, 0.3);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #047857;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #6b7280;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--border);
+            margin-top: 60px;
+        }
+        
+        .footer-principle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .professional-header h1 { font-size: 2.5rem; }
+            .professional-subtitle { font-size: 1.1rem; }
+            .service-card.popular { transform: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .principles-grid { grid-template-columns: 1fr; }
+            .btn { padding: 18px 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 专业头部 -->
+        <header class="professional-header">
+            <h1>🎯 AI营销增长服务</h1>
+            <p class="professional-subtitle">
+                专业诚信，结果导向。为成长型企业提供可衡量的业务增长解决方案，基于AI技术但以专业服务为核心。
+            </p>
+            <div class="value-proposition">
+                💰 专业承诺：3个月内实现流量+30% 或 收入+25%
+            </div>
+        </header>
+        
+        <!-- 核心理念 -->
+        <section class="core-principles">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--dark); font-size: 2.2rem;">🌟 我们的核心理念</h2>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3>🎯 结果导向</h3>
+                    <p>不以工具销售为目标，而以客户增长为结果。所有服务围绕可衡量的业务指标设计。</p>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>🔧 专业服务</h3>
+                    <p>AI技术为辅助，专业团队为核心。行业专家+AI工具，确保交付质量。</p>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>📊 数据驱动</h3>
+                    <p>所有决策基于数据，所有效果可衡量。透明沟通，实时反馈，持续优化。</p>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>🤝 诚信合作</h3>
+                    <p>承诺必达，透明沟通。建立长期信任关系，共同成长，持续赚钱。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 服务套餐 -->
+        <section class="services">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--dark); font-size: 2.2rem;">💰 专业服务套餐</h2>
+            <p style="text-align: center; color: #6b7280; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
+                基于真实企业需求设计，价格基于交付价值和预期结果，非工具成本。
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-badge">初创企业</div>
+                    <h3>基础增长套餐</h3>
+                    <div class="service-price">$499<span>/月</span></div>
+                    <p style="color: #6b7280; margin-bottom: 20px;">适合：月收入$1万-$5万企业</p>
+                    <ul class="service-features">
+                        <li>月度增长策略规划</li>
+                        <li>每周5篇深度文章</li>
+                        <li>每天10条社媒内容</li>
+                        <li>基础SEO优化</li>
+                        <li>月度数据分析报告</li>
+                        <li>保证：3个月流量+30%</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="contactUs('基础套餐')">
+                        🗣️ 专业咨询
+                    </button>
+                </div>
+                
+                <div class="service-card popular">
+                    <div class="service-badge" style="background: var(--success);">最受欢迎</div>
+                    <h3>专业增长套餐</h3>
+                    <div class="service-price">$999<span>/月</span></div>
+                    <p style="color: #6b7280; margin-bottom: 20px;">适合：月收入$5万-$20万企业</p>
+                    <ul class="service-features">
+                        <li>双周增长策略会议</li>
+                        <li>每周10篇专业内容</li>
+                        <li>社交媒体全平台管理</li>
+                        <li>高级SEO+SEM优化</li>
+                        <li>竞品分析报告</li>
+                        <li>转化率优化建议</li>
+                        <li>保证：3个月收入+25%</li>
+                    </ul>
+                    <button class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="contactUs('专业套餐')">
+                        🚀 立即签约
+                    </button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-badge">成熟企业</div>
+                    <h3>企业增长套餐</h3>
+                    <div class="service-price">$1999<span>/月</span></div>
+                    <p style="color: #6b7280; margin-bottom: 20px;">适合：月收入$20万+企业</p>
+                    <ul class="service-features">
+                        <li>每周增长策略会议</li>
+                        <li>定制内容创作计划</li>
+                        <li>全渠道营销管理</li>
+                        <li>数据驱动决策支持</li>
+                        <li>团队培训指导</li>
+                        <li>季度增长规划</li>
+                        <li>保证：ROI > 3:1</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="contactUs('企业套餐')">
+                        📈 定制方案
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 保证体系 -->
+        <section class="guarantee-system">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2rem;">✅ 专业保证体系</h2>
+            
+            <div class="guarantee-grid">
+                <div class="guarantee-card">
+                    <h3>3个月保证期</h3>
+                    <p>签约后3个月内，如果未达到承诺的增长目标，免费延长服务直至达标。</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <h3>数据透明化</h3>
+                    <p>所有数据实时可查，每周发送详细报告，效果一目了然，决策有据可依。</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <h3>专业团队支持</h3>
+                    <p>行业专家+AI辅助，确保交付质量。每周进度汇报，随时沟通调整。</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <h3>灵活合作模式</h3>
+                    <p>月付制，无长期合同绑定。专业服务，诚信合作，共同成长。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 案例展示 -->
+        <section class="case-studies">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--dark); font-size: 2.2rem;">📈 真实客户案例</h2>
+            
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3>🍽️ 连锁餐厅 - 张总</h3>
+                    <p><strong>合作前：</strong>3家门店，月收入$8万，增长停滞</p>
+                    <p><strong>服务：</strong>专业增长套餐，3个月</p>
+                    <p><strong>核心策略：</strong>本地SEO+社交媒体营销</p>
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">+42%</div>
+                            <div>客流量增长</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$3.2万</div>
+                            <div>月增收</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <h3>🛍️ 电商品牌 - 李小姐</h3>
+                    <p><strong
