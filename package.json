@@ -1,7 +1,7 @@
 {
-  "name": "ai-marketing-service-pro",
-  "version": "2.0.0",
-  "description": "AI营销增长服务 - 专业优化版本，结果导向的专业服务",
+  "name": "ai-marketing-service-pro-fixed",
+  "version": "3.0.0",
+  "description": "AI营销增长服务 - 专业修复版本，解决点击无效和设计问题",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,9 +12,9 @@
     "ai-marketing",
     "professional-service",
     "growth-service",
-    "digital-marketing",
-    "business-growth",
-    "result-oriented"
+    "fixed-version",
+    "responsive-design",
+    "interactive-ui"
   ],
   "author": "OpenClaw AI Professional Team <fengyuan521314@126.com>",
   "license": "MIT",
@@ -26,11 +26,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dijka123/ai-marketing-service-pro.git"
+    "url": "git+https://github.com/dijka123/ai-marketing-service-pro-fixed.git"
   },
   "bugs": {
-    "url": "https://github.com/dijka123/ai-marketing-service-pro/issues"
+    "url": "https://github.com/dijka123/ai-marketing-service-pro-fixed/issues"
   },
-  "homepage": "https://github.com/dijka123/ai-marketing-service-pro#readme",
+  "homepage": "https://github.com/dijka123/ai-marketing-service-pro-fixed#readme",
   "private": true
 }
